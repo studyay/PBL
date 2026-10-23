@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>밸류체인 교육의 가치</title>
+<style>
+:root{--bg:#f5f4ef;--paper:#fffefa;--ink:#18231f;--muted:#69736d;--line:#d9ddd6;--accent:#285b49;--accent-soft:#e7eee8}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#e7e8e3;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif}
+body{display:flex;align-items:center;justify-content:center;overflow:hidden}.stage{position:relative;width:min(100vw,56.25vh);height:min(177.7778vw,100vh);aspect-ratio:9/16;background:var(--bg);overflow:hidden;box-shadow:0 18px 60px #1a241e22}
+.slide{position:absolute;inset:0;padding:8% 9% 13%;display:flex;flex-direction:column;opacity:0;transform:translateX(2%);pointer-events:none;transition:opacity .25s ease,transform .25s ease}.slide.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.topline{display:flex;align-items:center;justify-content:space-between;font-size:clamp(11px,1.9vh,15px);letter-spacing:.1em;color:var(--muted);font-weight:750}.brand{display:flex;align-items:center;gap:8px}.brand:before{content:"";width:8px;height:8px;background:var(--accent);border-radius:50%}
+.section{color:var(--accent);font-size:clamp(12px,2.1vh,16px);font-weight:800;letter-spacing:.08em;margin-top:12%}
+h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margin:7% 0 0;font-weight:850;word-break:keep-all}h2{font-size:clamp(31px,5.1vh,44px);line-height:1.28;letter-spacing:-.05em;margin:8% 0 0;font-weight:850;word-break:keep-all}
+.sub{font-size:clamp(18px,2.8vh,23px);line-height:1.6;color:var(--muted);margin-top:6%;word-break:keep-all}.tempering-title{font-size:clamp(64px,12vh,96px);line-height:1.08;font-weight:950;letter-spacing:-.08em;margin-top:12%;color:var(--accent);word-break:keep-all}.tempering-image{margin-top:10%}.rule{height:1px;background:var(--line);margin:8% 0}.bigquote{font-size:clamp(31px,5.25vh,46px);font-weight:850;line-height:1.38;letter-spacing:-.055em;word-break:keep-all;margin:auto 0}.bigquote em{font-style:normal;color:var(--accent)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:7%;margin-top:10%}.term{font-size:clamp(38px,6.2vh,54px);font-weight:900;letter-spacing:-.05em;line-height:1.15}.term-en{font-size:clamp(17px,2.8vh,22px);color:var(--muted);line-height:1.5;margin-top:5%}.definition{font-size:clamp(19px,3vh,24px);line-height:1.7;margin-top:9%;word-break:keep-all}
+.image-placeholder{position:relative;flex:1;min-height:0;margin-top:8%;border:2px dashed #aab5ac;border-radius:18px;background:linear-gradient(135deg,#eef0e9,#f9f8f2);display:flex;align-items:center;justify-content:center;padding:7%;text-align:center;color:#647168;overflow:hidden}.image-placeholder .symbol{font-size:clamp(45px,8vh,68px);color:var(--accent)}.image-placeholder strong{display:block;font-size:clamp(18px,2.8vh,23px);line-height:1.45;color:var(--ink)}
+.gallery{position:relative;flex:1;min-height:0;margin-top:7%;display:flex;flex-direction:column}.gallery .image-placeholder{margin-top:0}.gallery-image{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:16px;background:var(--paper)}.gallery-image img{width:100%;height:100%;object-fit:contain;display:block}.gallery-count{font-size:clamp(14px,2.2vh,18px);font-weight:800;text-align:center;margin-top:3%;color:var(--muted)}.gallery-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:3%}.gallery-nav button{border:0;border-radius:50%;width:58px;height:58px;background:var(--accent);color:white;font-size:36px;line-height:1;cursor:pointer;box-shadow:0 4px 12px #18231f22}.gallery-nav button:active,.side-arrow:active{transform:scale(.96)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:9%}.mini{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:16px;min-height:90px;display:flex;align-items:center}.mini b{font-size:clamp(19px,3vh,25px);line-height:1.35;letter-spacing:-.03em}
+.footer{margin-top:auto;display:flex;justify-content:flex-end;align-items:center;color:var(--muted);font-size:clamp(12px,1.8vh,15px);padding-top:7%}.progress{height:4px;background:#dfe3dc;position:absolute;bottom:0;left:0;right:0}.progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+.dark{background:#18231f;color:#f8f8f1}.dark .topline,.dark .sub,.dark .footer{color:#b9c4bc}.dark .section{color:#a9d1b9}.dark .rule{background:#39463e}.dark .bigquote em{color:#a9d1b9}
+.side-arrow{position:absolute;z-index:8;top:50%;transform:translateY(-50%);width:clamp(42px,8vw,60px);height:clamp(64px,11vw,82px);border:0;border-radius:16px;background:#18231fdc;color:#fff;font-size:clamp(38px,7vw,54px);font-weight:400;display:grid;place-items:center;cursor:pointer;box-shadow:0 5px 20px #0002}.side-arrow.prev{left:8px}.side-arrow.next{right:8px}.controls{position:fixed;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:#18231fe8;color:white;border-radius:999px;padding:9px 13px;z-index:10;box-shadow:0 5px 22px #0002}.controls button{border:0;background:transparent;color:white;font-size:22px;width:34px;height:32px;cursor:pointer}.counter{font-size:14px;min-width:58px;text-align:center;font-variant-numeric:tabular-nums}.hint{position:fixed;bottom:65px;left:50%;transform:translateX(-50%);font-size:12px;color:#56615b;white-space:nowrap}
+@media(max-height:620px){.slide{padding-top:6%;padding-bottom:12%}.section{margin-top:6%}h2{margin-top:4%}.card{margin-top:5%}.gallery{margin-top:4%}.gallery-nav button{width:46px;height:46px;font-size:30px}}
+@media(prefers-reduced-motion:reduce){.slide,.progress span{transition:none}}
+/* Restored detail sections */
+.tempering-copy{margin-top:7%;text-align:left}
+.tempering-copy strong{display:block;font-size:clamp(19px,3.2vh,27px);line-height:1.5;letter-spacing:-.035em;word-break:keep-all}
+.tempering-copy span{display:block;margin-top:5%;font-size:clamp(12px,2vh,16px);line-height:1.6;color:var(--muted);word-break:keep-all}
+.tempering-image{flex:0 0 23%;min-height:0;margin-top:7%}
+.mini{display:block}.mini b{display:block;font-size:clamp(16px,2.5vh,21px)}
+.mini span{display:block;font-size:clamp(11px,1.65vh,14px);line-height:1.5;color:var(--muted);margin-top:7px;word-break:keep-all}
+.platform-steps{display:flex;flex-direction:column;gap:9px;margin-top:9%}
+.platform-step{display:flex;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:13px 12px}
+.platform-step .num{flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:800}
+.platform-step strong{font-size:clamp(13px,2.05vh,17px);line-height:1.4;word-break:keep-all}
+.platform-card{margin-top:8%;padding:7%}
+.platform-card .label{font-size:clamp(11px,1.85vh,14px);font-weight:800;letter-spacing:.08em;color:var(--accent)}
+.platform-card p{font-size:clamp(15px,2.5vh,20px);line-height:1.65;font-weight:800;word-break:keep-all;margin:5% 0 0}
+.platform-note{font-size:clamp(11px,1.75vh,14px);line-height:1.6;color:var(--muted);margin-top:5%;word-break:keep-all}
+@media(max-height:620px){.platform-steps{gap:6px;margin-top:5%}.platform-step{padding:9px}.platform-card{margin-top:5%;padding:5%}.platform-note{margin-top:3%}.platform-image{flex-basis:7%}}
+</style>
+</head>
+<body>
+<main class="stage" id="stage" aria-label="밸류체인 교육의 가치 브리핑 슬라이드">
+<section class="slide active dark">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>01 / 09</span></div>
+ <div class="section">EDUCATION → CAPABILITY → VALUE</div>
+ <h1>밸류체인<br>교육의 가치</h1>
+ <div class="rule"></div>
+ <p class="bigquote">배움을 실제 역량으로,<br><em>역량을 결과물로.</em></p>
+ <div class="footer">01 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>02 / 09</span></div>
+ <div class="section">LEARNING MODEL</div>
+ <div class="card">
+  <div class="term">PBL</div>
+  <div class="term-en">Project-Based Learning<br>프로젝트 기반 학습</div>
+  <div class="rule"></div>
+  <div class="term-en">Problem-Based Learning<br>문제 기반 학습</div>
+  <p class="definition">질문과 실제 문제를 중심으로 탐구하고 해결하며, 결과물을 만들어 가는 학습</p>
+ </div>
+ <div class="footer">02 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>03 / 09</span></div>
+ <p class="bigquote">무엇을 배웠는가보다<br><em>무엇을 해낼 수 있게 되었는가.</em></p>
+ <div class="footer">03 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>04 / 09</span></div>
+ <div class="section">REFINEMENT</div>
+ <div class="tempering-title">담금질</div>
+ <div class="tempering-copy">
+  <strong>불에 달구고, 두드리고,<br>담금질하고, 다시 다듬는다.</strong>
+  <span>검을 벼리듯, 도전과 피드백을 반복하며 실력을 정교하게 만듭니다.</span>
+ </div>
+ <div class="footer">04 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>05 / 09</span></div>
+ <div class="section">HOLISTIC EDUCATION</div>
+ <div class="card">
+  <div class="term">전인교육</div>
+  <div class="term-en">全人敎育 · Holistic Education</div>
+  <p class="definition">인간이 가진 다양한 자질을 조화롭고 균형 있게 발달시키는 교육</p>
+ </div>
+ <div class="grid2">
+  <div class="mini"><b>전문성</b><span>기술과 실무 역량을 훈련</span></div><div class="mini"><b>인성</b><span>역량을 사용하는 태도와 책임</span></div>
+  <div class="mini"><b>영성</b><span>기도 훈련과 신앙의 기반</span></div><div class="mini"><b>균형 있는 성장</b><span>지성과 영성을 함께 개발</span></div>
+ </div>
+ <div class="footer">05 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>06 / 09</span></div>
+ <h2 style="margin-top:7%">무엇을 할 수 있게 되었는가</h2>
+ <div class="gallery" aria-label="결과물 이미지 4장">
+  <div class="gallery-image" id="galleryImage"><img id="galleryPhoto" src="1.png" alt="결과물 이미지 1"></div>
+  <div class="gallery-count" id="galleryCount">1 / 4</div>
+  <div class="gallery-nav"><button type="button" id="galleryPrev" aria-label="이전 결과물">‹</button><button type="button" id="galleryNext" aria-label="다음 결과물">›</button></div>
+ </div>
+ <div class="footer">06 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>07 / 09</span></div>
+ <p class="bigquote"><em>지혜를 빌릴 줄 아는 것도</em><br>지혜입니다.</p>
+ <div class="footer">07 / 09</div>
+</section>
+<section class="slide">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>08 / 09</span></div>
+ <h2 style="margin-top:8%">서로 다른 역량이<br>연결될 때</h2>
+ <div class="section" style="margin-top:6%">THE PLATFORM PRINCIPLE</div>
+ <div class="platform-steps">
+  <div class="platform-step"><span class="num">A</span><strong>각자의 강점을 살리고</strong></div>
+  <div class="platform-step"><span class="num">B</span><strong>부족한 부분을 서로 보완하고</strong></div>
+  <div class="platform-step"><span class="num">C</span><strong>혼자서는 어려운 결과를 함께 완성한다</strong></div>
+ </div>
+ <div class="card platform-card">
+  <div class="label">VALUECHAIN</div>
+  <p>서로에게 가치 있는 사람들이<br>가치를 기반으로 연결되는 플랫폼</p>
+ </div>
+ <p class="platform-note">배우고, 도움을 주고받고, 각자의 역량을 연결해 더 큰 가치를 만듭니다.</p>
+ <div class="footer">08 / 09</div>
+</section>
+<section class="slide dark">
+ <div class="topline"><span class="brand">VALUECHAIN</span><span>09 / 09</span></div>
+ <div class="section">LEARNING BECOMES VALUE</div>
+ <p class="bigquote">배움이 역량이 되고,<br>역량이 결과물이 되고,<br><em>사람들이 연결되어<br>더 큰 가치를 만듭니다.</em></p>
+ <div class="footer">09 / 09</div>
+</section>
+<div class="progress"><span id="progress"></span></div>
+<button class="side-arrow prev" id="prev" aria-label="이전 슬라이드">‹</button>
+<button class="side-arrow next" id="next" aria-label="다음 슬라이드">›</button>
+</main>
+<div class="hint">좌우 화살표를 눌러 이동하거나 화면을 넘겨 보세요</div>
+<nav class="controls" aria-label="슬라이드 이동"><button id="prevSmall" aria-label="이전 슬라이드">‹</button><span class="counter" id="counter">01 / 09</span><button id="nextSmall" aria-label="다음 슬라이드">›</button><button id="full" aria-label="전체 화면" title="전체 화면">⛶</button></nav>
+<script>
+(()=>{
+ const slides=[...document.querySelectorAll('.slide')],counter=document.getElementById('counter'),progress=document.getElementById('progress');let index=0,startX=0,startY=0,galleryIndex=0;
+ function show(n){index=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===index));const count=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');counter.textContent=count;progress.style.width=((index+1)/slides.length*100)+'%';document.querySelectorAll('.topline span:last-child').forEach((el,i)=>el.textContent=String(i+1).padStart(2,'0')+' / 09');}
+ document.getElementById('prev').addEventListener('click',()=>show(index-1));document.getElementById('next').addEventListener('click',()=>show(index+1));document.getElementById('prevSmall').addEventListener('click',()=>show(index-1));document.getElementById('nextSmall').addEventListener('click',()=>show(index+1));
+ document.getElementById('full').addEventListener('click',async()=>{const el=document.getElementById('stage');try{if(!document.fullscreenElement)await el.requestFullscreen();else await document.exitFullscreen()}catch(e){}});
+ function updateGallery(){const img=document.getElementById('galleryPhoto');img.src=(galleryIndex+1)+'.png';img.alt='결과물 이미지 '+(galleryIndex+1);document.getElementById('galleryCount').textContent=(galleryIndex+1)+' / 4'}
+ document.getElementById('galleryPrev').addEventListener('click',()=>{galleryIndex=(galleryIndex+3)%4;updateGallery()});document.getElementById('galleryNext').addEventListener('click',()=>{galleryIndex=(galleryIndex+1)%4;updateGallery()});
+ document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(index+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(index-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});
+ const stage=document.getElementById('stage');stage.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY},{passive:true});stage.addEventListener('touchend',e=>{if(e.target.closest('.gallery-nav'))return;const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.25)show(index+(dx<0?1:-1))},{passive:true});
+ stage.addEventListener('click',e=>{if(e.target.closest('button,.gallery-nav'))return;const r=stage.getBoundingClientRect(),x=e.clientX-r.left;if(x<r.width*.18)show(index-1);else if(x>r.width*.82)show(index+1)});show(0);
+})();
+</script>
+</body>
+</html>
