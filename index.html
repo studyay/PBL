@@ -43,6 +43,13 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
 .gallery-image img{object-fit:cover;object-position:center}
 .gallery-count,.footer,.controls,.hint,.progress{display:none}
 .slide{padding-bottom:8%}
+/* Reserve a clear side gutter so slide controls never overlap copy or cards. */
+.slide{padding-left:clamp(52px,13%,74px);padding-right:clamp(52px,13%,74px)}
+.side-arrow{width:clamp(32px,7vw,40px);height:clamp(52px,10vw,66px);border-radius:0 12px 12px 0;font-size:clamp(30px,6vw,42px)}
+.side-arrow.prev{left:0}
+.side-arrow.next{right:0;border-radius:12px 0 0 12px}
+@media(max-width:360px){.slide{padding-left:48px;padding-right:48px}.side-arrow{width:30px}}
+
 </style>
 </head>
 <body>
