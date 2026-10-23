@@ -15,7 +15,7 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
 .sub{font-size:clamp(18px,2.8vh,23px);line-height:1.6;color:var(--muted);margin-top:6%;word-break:keep-all}.tempering-title{font-size:clamp(64px,12vh,96px);line-height:1.08;font-weight:950;letter-spacing:-.08em;margin-top:12%;color:var(--accent);word-break:keep-all}.tempering-image{margin-top:10%}.rule{height:1px;background:var(--line);margin:8% 0}.bigquote{font-size:clamp(31px,5.25vh,46px);font-weight:850;line-height:1.38;letter-spacing:-.055em;word-break:keep-all;margin:auto 0}.bigquote em{font-style:normal;color:var(--accent)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:7%;margin-top:10%}.term{font-size:clamp(38px,6.2vh,54px);font-weight:900;letter-spacing:-.05em;line-height:1.15}.term-en{font-size:clamp(17px,2.8vh,22px);color:var(--muted);line-height:1.5;margin-top:5%}.definition{font-size:clamp(19px,3vh,24px);line-height:1.7;margin-top:9%;word-break:keep-all}
 .image-placeholder{position:relative;flex:1;min-height:0;margin-top:8%;border:2px dashed #aab5ac;border-radius:18px;background:linear-gradient(135deg,#eef0e9,#f9f8f2);display:flex;align-items:center;justify-content:center;padding:7%;text-align:center;color:#647168;overflow:hidden}.image-placeholder .symbol{font-size:clamp(45px,8vh,68px);color:var(--accent)}.image-placeholder strong{display:block;font-size:clamp(18px,2.8vh,23px);line-height:1.45;color:var(--ink)}
-.gallery{position:relative;flex:1;min-height:0;margin-top:7%;display:flex;flex-direction:column}.gallery .image-placeholder{margin-top:0}.gallery-image{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:16px;background:var(--paper)}.gallery-image img{width:100%;height:100%;object-fit:contain;display:block}.gallery-count{font-size:clamp(14px,2.2vh,18px);font-weight:800;text-align:center;margin-top:3%;color:var(--muted)}.gallery-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:3%}.gallery-nav button{border:0;border-radius:50%;width:58px;height:58px;background:var(--accent);color:white;font-size:36px;line-height:1;cursor:pointer;box-shadow:0 4px 12px #18231f22}.gallery-nav button:active,.side-arrow:active{transform:scale(.96)}
+.gallery{position:relative;flex:1;min-height:0;margin-top:7%;display:flex;flex-direction:column}.gallery .image-placeholder{margin-top:0}.gallery-image{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:16px;background:var(--paper)}.gallery-image img{width:100%;height:100%;object-fit:cover;display:block}.gallery-count{font-size:clamp(14px,2.2vh,18px);font-weight:800;text-align:center;margin-top:3%;color:var(--muted)}.gallery-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:3%}.gallery-nav button{border:0;border-radius:50%;width:58px;height:58px;background:var(--accent);color:white;font-size:36px;line-height:1;cursor:pointer;box-shadow:0 4px 12px #18231f22}.gallery-nav button:active,.side-arrow:active{transform:scale(.96)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:9%}.mini{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:16px;min-height:90px;display:flex;align-items:center}.mini b{font-size:clamp(19px,3vh,25px);line-height:1.35;letter-spacing:-.03em}
 .footer{margin-top:auto;display:flex;justify-content:flex-end;align-items:center;color:var(--muted);font-size:clamp(12px,1.8vh,15px);padding-top:7%}.progress{height:4px;background:#dfe3dc;position:absolute;bottom:0;left:0;right:0}.progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
 .dark{background:#18231f;color:#f8f8f1}.dark .topline,.dark .sub,.dark .footer{color:#b9c4bc}.dark .section{color:#a9d1b9}.dark .rule{background:#39463e}.dark .bigquote em{color:#a9d1b9}
@@ -38,20 +38,25 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
 .platform-card p{font-size:clamp(15px,2.5vh,20px);line-height:1.65;font-weight:800;word-break:keep-all;margin:5% 0 0}
 .platform-note{font-size:clamp(11px,1.75vh,14px);line-height:1.6;color:var(--muted);margin-top:5%;word-break:keep-all}
 @media(max-height:620px){.platform-steps{gap:6px;margin-top:5%}.platform-step{padding:9px}.platform-card{margin-top:5%;padding:5%}.platform-note{margin-top:3%}.platform-image{flex-basis:7%}}
+/* Full-bleed gallery photography, with no placeholder frame or bottom navigation. */
+.gallery-image{border:0;border-radius:0;padding:0;background:transparent}
+.gallery-image img{object-fit:cover;object-position:center}
+.gallery-count,.footer,.controls,.hint,.progress{display:none}
+.slide{padding-bottom:8%}
 </style>
 </head>
 <body>
 <main class="stage" id="stage" aria-label="밸류체인 교육의 가치 브리핑 슬라이드">
 <section class="slide active dark">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>01 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <div class="section">EDUCATION → CAPABILITY → VALUE</div>
  <h1>밸류체인<br>교육의 가치</h1>
  <div class="rule"></div>
  <p class="bigquote">배움을 실제 역량으로,<br><em>역량을 결과물로.</em></p>
- <div class="footer">01 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>02 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <div class="section">LEARNING MODEL</div>
  <div class="card">
   <div class="term">PBL</div>
@@ -60,25 +65,25 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
   <div class="term-en">Problem-Based Learning<br>문제 기반 학습</div>
   <p class="definition">질문과 실제 문제를 중심으로 탐구하고 해결하며, 결과물을 만들어 가는 학습</p>
  </div>
- <div class="footer">02 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>03 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <p class="bigquote">무엇을 배웠는가보다<br><em>무엇을 해낼 수 있게 되었는가.</em></p>
- <div class="footer">03 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>04 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <div class="section">REFINEMENT</div>
  <div class="tempering-title">담금질</div>
  <div class="tempering-copy">
   <strong>불에 달구고, 두드리고,<br>담금질하고, 다시 다듬는다.</strong>
   <span>검을 벼리듯, 도전과 피드백을 반복하며 실력을 정교하게 만듭니다.</span>
  </div>
- <div class="footer">04 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>05 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <div class="section">HOLISTIC EDUCATION</div>
  <div class="card">
   <div class="term">전인교육</div>
@@ -89,25 +94,25 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
   <div class="mini"><b>전문성</b><span>기술과 실무 역량을 훈련</span></div><div class="mini"><b>인성</b><span>역량을 사용하는 태도와 책임</span></div>
   <div class="mini"><b>영성</b><span>기도 훈련과 신앙의 기반</span></div><div class="mini"><b>균형 있는 성장</b><span>지성과 영성을 함께 개발</span></div>
  </div>
- <div class="footer">05 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>06 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <h2 style="margin-top:7%">무엇을 할 수 있게 되었는가</h2>
  <div class="gallery" aria-label="결과물 이미지 4장">
   <div class="gallery-image" id="galleryImage"><img id="galleryPhoto" src="1.png" alt="결과물 이미지 1"></div>
-  <div class="gallery-count" id="galleryCount">1 / 4</div>
+  
   <div class="gallery-nav"><button type="button" id="galleryPrev" aria-label="이전 결과물">‹</button><button type="button" id="galleryNext" aria-label="다음 결과물">›</button></div>
  </div>
- <div class="footer">06 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>07 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <p class="bigquote"><em>지혜를 빌릴 줄 아는 것도</em><br>지혜입니다.</p>
- <div class="footer">07 / 09</div>
+ 
 </section>
 <section class="slide">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>08 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <h2 style="margin-top:8%">서로 다른 역량이<br>연결될 때</h2>
  <div class="section" style="margin-top:6%">THE PLATFORM PRINCIPLE</div>
  <div class="platform-steps">
@@ -120,27 +125,25 @@ h1{font-size:clamp(37px,6.2vh,54px);line-height:1.2;letter-spacing:-.055em;margi
   <p>서로에게 가치 있는 사람들이<br>가치를 기반으로 연결되는 플랫폼</p>
  </div>
  <p class="platform-note">배우고, 도움을 주고받고, 각자의 역량을 연결해 더 큰 가치를 만듭니다.</p>
- <div class="footer">08 / 09</div>
+ 
 </section>
 <section class="slide dark">
- <div class="topline"><span class="brand">VALUECHAIN</span><span>09 / 09</span></div>
+ <div class="topline"><span class="brand">VALUECHAIN</span></div>
  <div class="section">LEARNING BECOMES VALUE</div>
  <p class="bigquote">배움이 역량이 되고,<br>역량이 결과물이 되고,<br><em>사람들이 연결되어<br>더 큰 가치를 만듭니다.</em></p>
- <div class="footer">09 / 09</div>
+ 
 </section>
-<div class="progress"><span id="progress"></span></div>
+
 <button class="side-arrow prev" id="prev" aria-label="이전 슬라이드">‹</button>
 <button class="side-arrow next" id="next" aria-label="다음 슬라이드">›</button>
 </main>
-<div class="hint">좌우 화살표를 눌러 이동하거나 화면을 넘겨 보세요</div>
-<nav class="controls" aria-label="슬라이드 이동"><button id="prevSmall" aria-label="이전 슬라이드">‹</button><span class="counter" id="counter">01 / 09</span><button id="nextSmall" aria-label="다음 슬라이드">›</button><button id="full" aria-label="전체 화면" title="전체 화면">⛶</button></nav>
+
 <script>
 (()=>{
- const slides=[...document.querySelectorAll('.slide')],counter=document.getElementById('counter'),progress=document.getElementById('progress');let index=0,startX=0,startY=0,galleryIndex=0;
- function show(n){index=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===index));const count=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');counter.textContent=count;progress.style.width=((index+1)/slides.length*100)+'%';document.querySelectorAll('.topline span:last-child').forEach((el,i)=>el.textContent=String(i+1).padStart(2,'0')+' / 09');}
- document.getElementById('prev').addEventListener('click',()=>show(index-1));document.getElementById('next').addEventListener('click',()=>show(index+1));document.getElementById('prevSmall').addEventListener('click',()=>show(index-1));document.getElementById('nextSmall').addEventListener('click',()=>show(index+1));
- document.getElementById('full').addEventListener('click',async()=>{const el=document.getElementById('stage');try{if(!document.fullscreenElement)await el.requestFullscreen();else await document.exitFullscreen()}catch(e){}});
- function updateGallery(){const img=document.getElementById('galleryPhoto');img.src=(galleryIndex+1)+'.png';img.alt='결과물 이미지 '+(galleryIndex+1);document.getElementById('galleryCount').textContent=(galleryIndex+1)+' / 4'}
+ const slides=[...document.querySelectorAll('.slide')];let index=0,startX=0,startY=0,galleryIndex=0;
+ function show(n){index=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===index));}
+ document.getElementById('prev').addEventListener('click',()=>show(index-1));document.getElementById('next').addEventListener('click',()=>show(index+1));
+  function updateGallery(){const img=document.getElementById('galleryPhoto');img.src=(galleryIndex+1)+'.png';img.alt='결과물 이미지 '+(galleryIndex+1);}
  document.getElementById('galleryPrev').addEventListener('click',()=>{galleryIndex=(galleryIndex+3)%4;updateGallery()});document.getElementById('galleryNext').addEventListener('click',()=>{galleryIndex=(galleryIndex+1)%4;updateGallery()});
  document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(index+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(index-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});
  const stage=document.getElementById('stage');stage.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY},{passive:true});stage.addEventListener('touchend',e=>{if(e.target.closest('.gallery-nav'))return;const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.25)show(index+(dx<0?1:-1))},{passive:true});
